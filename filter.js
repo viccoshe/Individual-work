@@ -1,27 +1,53 @@
+
 const filter = function(selector) {
     const tabContainer = document.querySelectorAll(selector);
     const btnContainer = document.querySelectorAll('.filter');
     const newTab = document.querySelector('.plus');
 
+    const createTab = function(count) {
+        let li = document.createElement('li');
+        li.setAttribute('data-filter', `tab${count}`);
+        li.classList.add('tab', 'plus');
+        li.innerText = `tab ${count}`;
+        return li;
+    }
+
+    const createContent = function (text, count) {
+        let li = document.createElement('li');
+        li.setAttribute('data-filter', `tab${count}`); 
+        li.classList.add('content', 'plus');
+        li.innerText = text;
+        return li;
+    }
+
     const tabHandler = function(buttons, contents) {
         buttons.forEach(function(btn) {
-            btn.addEventListener('click', function(){
-                buttons.forEach(function(elem) {
-                    elem.classList.remove('active');
-                    btn.classList.add('active');
-                });
 
+               btn.addEventListener('click', function(){
                 const indexTab = btn.dataset.filter;
 
-                contents.forEach(function(elem){
+                //const addButton = ()
                     if(indexTab === 'plus'){
-                       elem.classList.remove('active');
-                       const newLi = document.createElement('li');
-                        newLi.classList.add('tab');
-                        newLi.textContent = 'New Tab';
-                        btnContainer.append(newLi);
+                        let text = 'prompt(.............)';
+                        
+                        const tabsCont = document.querySelector('.filter'); 
+                        let count = tabsCont.children.length;
+                        let tab = createTab(count);
+                        btn.before(tab);
+                        let content = createContent(text, count);
+                        let list = document.querySelector('.list');
+                        list.append(content); //buttons.append(content) не работает и  active Не хочет добавляться в новые табы
+                        
                     }
+                    buttons.forEach(function(elem) {
+                        elem.classList.remove('active');
+                        btn.classList.add('active');
 
+                        //addTab(btn);
+                    
+                }); 
+
+                contents.forEach(function(elem){                    
                     if(indexTab === 'all'){
                         contents.forEach(function (allTabs){
                             allTabs.classList.add('active');
@@ -43,6 +69,8 @@ const filter = function(selector) {
     tabContainer.forEach(function(tab) {
         const tabButtons = tab.querySelectorAll('.tab');
         const contents = tab.querySelectorAll('.content');
+        const contentContainer = tab.querySelector('.list');
+        const  portfolioContainer = tab.querySelector('.filter');
 
         tabHandler(tabButtons, contents);
     });
@@ -50,3 +78,5 @@ const filter = function(selector) {
 }
 
 filter('.portfolio'); // id
+
+

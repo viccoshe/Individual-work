@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tooltip.css">
+    <link rel="stylesheet" href="accordeon.css">
+    <link rel="stylesheet" href="gallery.css">
 </head>
 <body>
 <!--
@@ -73,8 +76,49 @@
         </ul>
     </div>
 
+    <div class="tooltip-container">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex ducimus molestias provident doloremque error, illo ad nostrum assumenda. Molestiae error quas harum vero ad earum laborum eius maxime voluptate aperiam  <span class="tooltip_element" title="ОЧЕНЬ ВАЖНАЯ ИНФОРМАЦИЯ">TOOLTIP'S HERE</span> molestias excepturi deleniti vitae totam nobis reprehenderit </p>
+        
+        <p>dolore quidem commodi, nesciunt voluptatum sint aliquam autem fugit. <span class="tooltip_element" title="ИНФОРМАЦИЯ ЕЩЕ ВАЖНЕЕ">AND HERE</span>Eaque sunt dicta repellat quis corporis eius non ex obcaecati sequi earum necessitatibus, suscipit nobis iusto impedit assumenda aliquid culpa odit itaque amet omnis odio. Quo debitis beatae nostrum. Quo et nostrum molestias quas!</p>
+    </div>
+
+    <div class="container-accordeon">
+        <div class="acc-button">Menu 1</div>
+        <div class="acc_content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur id saepe architecto quaerat totam blanditiis laboriosam ab quis, pariatur recusandae, quo ipsa molestias esse culpa vero repudiandae. Non, molestiae? Qui!</div>
+        <div class="acc-button">Menu 2</div>
+        <div class="acc_content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur id saepe architecto quaerat totam blanditiis laboriosam ab quis, pariatur recusandae, quo ipsa molestias esse culpa vero repudiandae. Non, molestiae? Qui!</div>
+        <div class="acc-button">Menu 3</div>
+        <div class="acc_content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur id saepe architecto quaerat totam blanditiis laboriosam ab quis, pariatur recusandae, quo ipsa molestias esse culpa vero repudiandae. Non, molestiae? Qui!</div>
+    </div>
+
+    <div class="gallery">
+        <h2>Tabbed Image Gallery</h2>
+        <p>Click on the images below:</p>
+      
+      
+      <div class="gallery-container">
+        <div class="img"><a href="img_lights.jpg" data-type="img"><img src="img_lights.jpg" alt=""></a></div>
+        <div class="img"><a href="img_mountains.jpg" data-type="img"><img src="img_mountains.jpg" alt=""></a></div>
+        <div class="img"><a href="img_nature.jpg" data-type="img"><img src="img_nature.jpg" alt=""></a></div>
+        <div class="img"><a href="img_snow.jpg" data-type="img"><img src="img_snow.jpg" alt=""></a></div>
+      </div>
+      
+</div>
+
+
+        <!--<div class="popup">
+                <div class="popup_modal">
+                    <div class="popup_close">&#215;</div>
+                    <div class="popup_content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit similique harum earum, iste aliquam quaerat. Repellat magni dolor fugit molestias quaerat id rem laudantium nisi, laborum reprehenderit ea cum vero!
+                    </div>
+                </div>
+            </div>-->
+            
     <script src="filter.js"></script>
     <script src="gallery.js"></script>
+    <script src="tooltip.js"></script>
+    <script src="accordeon.js"></script>
     
 </body>
 </html>

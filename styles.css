@@ -13,30 +13,57 @@ body {
 .portfolio__filter {
     display: flex;
     list-style: none;
-    background: wheat;
+    background-color:rgb(205, 205, 205);
+    height: 50px;
+
 }
 
 .tab {
     padding: 10px;
-    background-color: rgb(226, 181, 98);
+    background-color: rgb(205, 205, 205);
 }
 
 .tab:hover {
-    background-color: rgb(159, 124, 59);
+    background-color: rgb(255, 255, 255);
     cursor: pointer;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-bottom: 3px solid black;
+    color: grey;
+    
 }
 
-.tabs .active {
-    background-color: rgb(159, 124, 59); /*bcc такой же как и при ховере*/
+.tab.active {
+    background-color: #000000;
+    color: white; /*bcc такой же как и при ховере*/
 }
 
-.content {
+.list {
+  display: flex;
+  width: 33%;
+}
+
+.list h3 {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.list .content {
     display: none;
+    padding: 10px;
+    width: 200px;
+    height: 200px;
 }
 
 .content.active {
     display: block;
 }
+
+
+
 
 
 
