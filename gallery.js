@@ -1,4 +1,3 @@
-//работает только 1 раз, второй раз изображение не показывает
 const popup = function(selector) {
     const elems = document.querySelectorAll(selector);
     const previewBcg = document.querySelector('.preview');
@@ -7,7 +6,9 @@ const popup = function(selector) {
        if (!e.target.classList.contains('preview') && !e.target.classList.contains('close')) return;
             const previewBcg = document.querySelector('.preview');
             if(!previewBcg) return;    
-            previewBcg.remove(); 
+            let previewImg = document.querySelector('.pr-img');
+            previewImg.remove();
+            previewBcg.style.display = 'none';
     }
 
     const show = function(content) {
