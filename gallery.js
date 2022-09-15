@@ -1,3 +1,4 @@
+//работает только 1 раз, второй раз изображение не показывает
 const popup = function(selector) {
     const elems = document.querySelectorAll(selector);
     const previewBcg = document.querySelector('.preview');
@@ -7,13 +8,6 @@ const popup = function(selector) {
             const previewBcg = document.querySelector('.preview');
             if(!previewBcg) return;    
             previewBcg.remove(); 
-        /*let previewBcg = document.querySelector('.gallery__preview');
-        if(!e.target.classList.contains('gallery__preview')) previewBcg.remove(); 
-        
-
-        if(e.target.classList.contains('close')) previewBcg.remove();*/
-        
-
     }
 
     const show = function(content) {
@@ -25,8 +19,6 @@ const popup = function(selector) {
 
     const clickHandler = (e) => {
         e.preventDefault();
-        const previewImg = document.querySelector('pr-img');
-        if(previewImg) previewBcg.remove();
 
         let elem = e.target;
         let type = elem.dataset.type;
