@@ -17,30 +17,33 @@
     margin: 5px;
 }
 
-.popup{
+
+.preview {
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     background: rgba(0, 0, 0, 0.111);
-    width: 100vw;
-    height: 100vh;
+    width: 800px;
+    height: 400px;
     top: 0;
     left: 0;
+    position: sticky;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+
 }
 
-.popup .popup_modal{
-    background: #fff;
-    width: 60%;
-    padding: 20px;
-    border-radius: 10px;
-    position: relative;
+.pr-img {
+    width: 600px;
+    height: 400px;
 }
 
-.popup .popup_close{
+.close {
     position: absolute;
-    top: -15px;
-    right: -15px;
+    top: 15px;
+    right: 15px;
     font-size: 30px;
     line-height: 27px;
     width: 30px;
@@ -49,4 +52,5 @@
     border: 1px solid rgba(0, 0, 0, 0.413);
     border-radius: 50%;
     background: #fff;
+    z-index: 2;
 }

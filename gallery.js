@@ -1,36 +1,20 @@
 const popup = function(selector) {
     const elems = document.querySelectorAll(selector);
+    const previewBcg = document.querySelector('.preview');
 
     const close = (e) => {
-        if(!e.target.classList.contains('popup') && !e.target.classList.contains('popup_close')) return;
-        let popup = document.querySelector('.popup');
-        if(!popup) return;
-        popup.remove();
+        if(!e.target.classList.contains('.preview') && !e.target.classList.contains('.close')) return;
+        if(!previewBcg) return;
+        previewBcg.remove();
     }
 
     //не работает
     const show = function(content) {
-        let popupContainer = document.createElement('div');
-        let popupModal = document.createElement('div');
-        let popupClose = document.createElement('div');
-        let popupContent = document.createElement('div');
-
-        popupContainer.classList.add('popup');
-        popupModal.classList.add('popup_modal');
-        popupClose.classList.add('popup_close');
-        popupContent.classList.add('popup_content');
-
-        popupClose.innerHTML = '&#215;';
-
-        //content.style.width = '100%';
-        popupContent.append(content);
-
-        popupModal.append(popupClose, popupContent);
-        popupContainer.append(popupModal);
-        popupContainer.addEventListener('click', close);
-        console.log(popupContainer);
-
-        document.body.append(popupContainer);
+        
+        let previewImg = content;
+        previewBcg.append(previewImg);
+        previewBcg.style.display = 'block';
+        previewBcg.addEventListener('click', close);
     }
 
     const clickHandler = (e) => {
@@ -57,6 +41,7 @@ const popup = function(selector) {
 
             let img = document.createElement('img');
             img.setAttribute('src', href);
+            img.classList.add('.pr-img');
 
             content = img;
         }
