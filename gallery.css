@@ -24,11 +24,12 @@
     align-items: center;
     position: absolute;
     background: rgba(0, 0, 0, 0.111);
-    width: 800px;
-    height: 400px;
+    position: fixed;
     top: 0;
     left: 0;
-    position: sticky;
+    width: 100%;
+    height: 100%;
+
     margin-left: auto;
     margin-right: auto;
     display: none;
@@ -36,6 +37,8 @@
 }
 
 .pr-img {
+    margin-top: 100px;
+    margin-bottom: auto;
     width: 600px;
     height: 400px;
 }

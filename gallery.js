@@ -2,16 +2,22 @@ const popup = function(selector) {
     const elems = document.querySelectorAll(selector);
     const previewBcg = document.querySelector('.preview');
 
-    const close = (e) => {
-        if(!e.target.classList.contains('.preview') && !e.target.classList.contains('.close')) return;
-        if(!previewBcg) return;
-        previewBcg.remove();
+    const close = function(e) {
+       if (!e.target.classList.contains('preview') && !e.target.classList.contains('close')) return;
+            const previewBcg = document.querySelector('.preview');
+            if(!previewBcg) return;    
+            previewBcg.remove(); 
+        /*let previewBcg = document.querySelector('.gallery__preview');
+        if(!e.target.classList.contains('gallery__preview')) previewBcg.remove(); 
+        
+
+        if(e.target.classList.contains('close')) previewBcg.remove();*/
+        
+
     }
 
-    //не работает
     const show = function(content) {
-        
-        let previewImg = content;
+        const previewImg = content;
         previewBcg.append(previewImg);
         previewBcg.style.display = 'block';
         previewBcg.addEventListener('click', close);
@@ -19,6 +25,8 @@ const popup = function(selector) {
 
     const clickHandler = (e) => {
         e.preventDefault();
+        const previewImg = document.querySelector('pr-img');
+        if(previewImg) previewBcg.remove();
 
         let elem = e.target;
         let type = elem.dataset.type;
@@ -41,8 +49,7 @@ const popup = function(selector) {
 
             let img = document.createElement('img');
             img.setAttribute('src', href);
-            img.classList.add('.pr-img');
-
+            img.classList.add('pr-img');
             content = img;
         }
 
