@@ -26,24 +26,29 @@ const filter = function(selector) {
                btn.addEventListener('click', function(){
                 const indexTab = btn.dataset.filter;
 
-                //const addButton = ()
                     if(indexTab === 'plus'){
                         let text = 'prompt(.............)';
-                        
                         const tabsCont = document.querySelector('.filter'); 
                         let count = tabsCont.children.length;
                         let tab = createTab(count);
                         btn.before(tab);
                         let content = createContent(text, count);
                         let list = document.querySelector('.list');
-                        list.append(content); //buttons.append(content) не работает и  active Не хочет добавляться в новые табы
+                        list.append(content); 
+                        buttons.forEach(function(elem) {
+                            elem.classList.remove('active');
+                            btn.classList.add('active');
+                        });
+                        
+                        
                         
                     }
+                    
                     buttons.forEach(function(elem) {
                         elem.classList.remove('active');
                         btn.classList.add('active');
 
-                        //addTab(btn);
+                     
                     
                 }); 
 
